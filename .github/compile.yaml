@@ -1,0 +1,13 @@
+name: Compile
+on: [push, workflow_dispatch]
+
+jobs:
+  compile-all:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          touch ascot5_main
+          echo "Jepajee"
