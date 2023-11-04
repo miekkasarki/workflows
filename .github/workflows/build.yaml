@@ -27,7 +27,7 @@ jobs:
       - run: echo "Docker-Built"
 
   Build-Code:
-    needs: Build-Image:
+    needs: Build-Image
     runs-on: ubuntu-latest
 
     steps:
