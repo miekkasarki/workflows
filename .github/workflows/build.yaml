@@ -2,8 +2,8 @@ on: [workflow_call]
 
 jobs:
 
-  name: Check-Dockerfile
   check:
+    name: Check-Dockerfile
     runs-on: ubuntu-latest
     outputs:
       docker: ${{ steps.filter.outputs.docker }}
