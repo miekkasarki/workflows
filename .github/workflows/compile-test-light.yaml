@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 jobs:
   Update-Docker-Image:
     steps:
-      run: echo "Updated docker"
+      - run: echo "Updated docker"
 
   Prepare-Tests:
     needs: Update-Docker-Image
