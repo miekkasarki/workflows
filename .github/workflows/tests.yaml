@@ -1,23 +1,24 @@
 name: Tests
-on: [workflow_call]
-inputs:
-  run_unit_tests:
-    description: "Unit tests are run if 'yes' and skipped otherwise."
-    type: boolean
-    required: false
-    default: "false"
+on:
+  workflow_call:
+    inputs:
+      run_unit_tests:
+        description: "Unit tests are run if 'yes' and skipped otherwise."
+        type: boolean
+        required: false
+        default: "false"
 
-  run_physics_tests:
-    description: "Physics tests are run if 'yes' and skipped otherwise."
-    type: boolean
-    required: false
-    default: "false"
+      run_physics_tests:
+        description: "Physics tests are run if 'yes' and skipped otherwise."
+        type: boolean
+        required: false
+        default: "false"
 
-  run_tutorials:
-    description: "Tutorials are run if 'yes' and skipped otherwise."
-    type: boolean
-    required: false
-    default: "false"
+      run_tutorials:
+        description: "Tutorials are run if 'yes' and skipped otherwise."
+        type: boolean
+        required: false
+        default: "false"
 
 jobs:
   Download-Artifacts:
