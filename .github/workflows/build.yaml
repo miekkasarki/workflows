@@ -1,7 +1,33 @@
 on: [workflow_call]
 
 jobs:
-  Build:
+
+  name: Check-Dockerfile
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      docker: ${{ steps.filter.outputs.docker }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            docker:
+              - './.github/workflows/Dockerfile'
+
+  Build-Image:
+    needs: check
+    if: ${{ needs.check.outputs.docker == true }}
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - run: echo "Docker-Built"
+
+  Build-Code:
+    needs: Build-Image:
     runs-on: ubuntu-latest
 
     steps:

@@ -2,13 +2,8 @@ name: Run Tests (light)
 on: [push, workflow_dispatch]
 
 jobs:
-  Update-Docker-Image:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Updated docker"
 
   Prepare-Tests:
-    needs: Update-Docker-Image
     uses: miekkasarki/workflows/.github/workflows/build.yaml@main
 
   Testing:
