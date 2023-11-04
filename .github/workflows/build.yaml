@@ -1,8 +1,7 @@
-name: Compile
 on: [workflow_call]
 
 jobs:
-  compile:
+  Build:
     runs-on: ubuntu-latest
 
     steps:

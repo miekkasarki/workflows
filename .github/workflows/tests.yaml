@@ -37,18 +37,18 @@ jobs:
 
   Unit-Tests:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run_unit_tests == 'true' }}
+    if: ${{ inputs.run_unit_tests == true }}
     steps:
       - run: echo "Unit tests complete"
 
   Physics-Tests:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run_physics_tests == 'true' }}
+    if: ${{ inputs.run_physics_tests == true }}
     steps:
       - run: echo "Physics tests complete"
 
   Tutorials:
     runs-on: ubuntu-latest
-    if: ${{ inputs.run_tutorials_tests == 'true' }}
+    if: ${{ inputs.run_tutorials_tests == true }}
     steps:
       - run: echo "Tutorials complete"
