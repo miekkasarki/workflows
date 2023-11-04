@@ -3,6 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   Update-Docker-Image:
+    runs-on: ubuntu-latest
     steps:
       - run: echo "Updated docker"
 
