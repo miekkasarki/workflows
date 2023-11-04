@@ -11,6 +11,7 @@ jobs:
           name: ascot5_main
 
       - run: |
+          mkdir build
           tar -xf archive.tar -C ./build/
           ls -l ./build/ascot5_main
           ls -l ./build/libascot
