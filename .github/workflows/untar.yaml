@@ -1,0 +1,16 @@
+name: Untar
+on: [workflow_call]
+
+jobs:
+  untar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download
+        uses: actions/download-artifact@main
+        with:
+          name: ascot5_main
+
+      - run: |
+          tar -xf archive.tar -C ./build/
+          ls -l ./build/ascot5_main
+          ls -l ./build/libascot

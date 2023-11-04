@@ -6,15 +6,5 @@ jobs:
     uses: miekkasarki/workflows/.github/workflows/compile.yaml@main
 
   job2:
-    runs-on: ubuntu-latest
     needs: job1
-    steps:
-      - name: Download
-        uses: actions/download-artifact@main
-        with:
-          name: ascot5_main
-
-      - run: |
-          tar -xf archive.tar -C ./build/
-          ls -l ./build/ascot5_main
-          ls -l ./build/libascot
+    uses: miekkasarki/workflows/.github/workflows/untar.yaml@main
