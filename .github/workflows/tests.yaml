@@ -6,19 +6,19 @@ on:
         description: "Unit tests are run if 'yes' and skipped otherwise."
         type: boolean
         required: false
-        default: "false"
+        default: 'false'
 
       run_physics_tests:
         description: "Physics tests are run if 'yes' and skipped otherwise."
         type: boolean
         required: false
-        default: "false"
+        default: 'false'
 
       run_tutorials:
         description: "Tutorials are run if 'yes' and skipped otherwise."
         type: boolean
         required: false
-        default: "false"
+        default: 'false'
 
 jobs:
   Download-Artifacts:
