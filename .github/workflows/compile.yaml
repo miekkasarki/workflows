@@ -14,11 +14,11 @@ jobs:
           ls -l ascot5_main
           chmod +x ascot5_main
           ls -l ascot5_main
+          tar -cf archive.tar ascot5_main libascot
 
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: ascot5_main
           path: |
-            ascot5_main
-            libascot
+            archive.tar
