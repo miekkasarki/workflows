@@ -1,5 +1,5 @@
 name: Run
-on: [push,workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   job1:
@@ -14,6 +14,6 @@ jobs:
         with:
           name: ascot5_main
 
-      -run: |
-        ls -l ascot5_main
-        ls -l libascot
+      - run: |
+         ls -l ascot5_main
+         ls -l libascot
