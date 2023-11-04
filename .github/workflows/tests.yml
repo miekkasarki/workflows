@@ -1,8 +1,26 @@
-name: Untar
+name: Tests
 on: [workflow_call]
+inputs:
+  run_unit_tests:
+    description: "Unit tests are run if 'yes' and skipped otherwise."
+    type: boolean
+    required: false
+    default: "false"
+
+  run_physics_tests:
+    description: "Physics tests are run if 'yes' and skipped otherwise."
+    type: boolean
+    required: false
+    default: "false"
+
+  run_tutorials:
+    description: "Tutorials are run if 'yes' and skipped otherwise."
+    type: boolean
+    required: false
+    default: "false"
 
 jobs:
-  untar:
+  Download-Artifacts:
     runs-on: ubuntu-latest
     steps:
       - name: Download
@@ -15,3 +33,21 @@ jobs:
           tar -xf archive.tar -C ./build/
           ls -l ./build/ascot5_main
           ls -l ./build/libascot
+
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.run_unit_tests == "true" }}
+    steps:
+      - run: echo "Unit tests complete"
+
+  Physics-Tests:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.run_physics_tests == "true" }}
+    steps:
+      - run: echo "Physics tests complete"
+
+  Tutorials:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.run_tutorials_tests == "true" }}
+    steps:
+      - run: echo "Tutorials complete"
