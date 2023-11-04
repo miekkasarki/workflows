@@ -1,8 +1,8 @@
 name: Compile
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
-  compile-all:
+  compile:
     runs-on: ubuntu-latest
 
     steps:
@@ -10,4 +10,15 @@ jobs:
 
       - run: |
           touch ascot5_main
-          echo "Jepajee"
+          touch libascot
+          ls -l ascot5_main
+          chmod +x ascot5_main
+          ls -l ascot5_main
+
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ascot5_main
+          path: |
+            ascot5_main
+            libascot
