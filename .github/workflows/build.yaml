@@ -19,7 +19,7 @@ jobs:
 
   Build-Image:
     needs: check
-    if: ${{ needs.check.outputs.docker == true }}
+    if: ${{ needs.check.outputs.docker == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
